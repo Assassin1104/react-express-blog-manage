@@ -10,6 +10,7 @@ export default function LoginPage(props) {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const handleUsernameChange = (e) => {
         setUsername(e.target.value);
@@ -20,7 +21,6 @@ export default function LoginPage(props) {
     };
 
     const handleFormSubmit = (e) => {
-
         e.preventDefault();
 
         if (username == "") {
@@ -31,18 +31,15 @@ export default function LoginPage(props) {
             alert("Please input password.");
             return;
         }
-        props.setLoading(true);
 
+        setLoading(true);
         setTimeout(() => {
-            props.setMessage("Login.");
-
             const loginInfo = { username: username, password: password };
-
             axios.post('http://localhost:5000/auth/login', loginInfo)
                 .then((response) => {
                     if (response.data == "Okay") {
                         alert("You have to logged in.");
-                        props.setLoading(false);
+                        setLoading(false);
                     }
                 }).catch((ex) => {
                     console.log(ex);
@@ -65,10 +62,10 @@ export default function LoginPage(props) {
                     <div className="form-group">
                         <Button
                             variant="primary"
-                            disabled={props.loading}
-                            onClick={!props.loading ? handleFormSubmit : null}
+                            disabled={loading}
+                            onClick={!loading ? handleFormSubmit : null}
                         >
-                            {props.loading ? 'Loading…' : 'Login'}
+                            {loading ? 'Loading…' : 'Login'}
                         </Button>
                     </div>
                 </form>
