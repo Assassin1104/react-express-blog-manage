@@ -8,8 +8,8 @@ function App() {
   const [message, setMessage] = useState("");
   return (
     <div>
-        <Loading spinnerShow={loading} message={message}/>
-        <LoginPage setLoading={setLoading} setMessage={setMessage}/>
+        {/* <Loading spinnerShow = {loading} message= {message} /> */}
+        <LoginPage setLoading = {setLoading} setMessage = {setMessage} loading = {loading}/>
     </div>
   );
 }

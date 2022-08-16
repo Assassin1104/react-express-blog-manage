@@ -29,7 +29,7 @@ form .form-group label {
 }
 
 form .form-group button{
-    justify-content: center;
+    width: 100%;
 }
 
 /* loading style */
