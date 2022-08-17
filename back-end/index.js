@@ -11,6 +11,7 @@ app.get("/", function (req, res, next) {
 });
 
 app.post("/auth/login", function(req, res, next) {
+    console.log(req);
     res.send("Okay");
 });
 
