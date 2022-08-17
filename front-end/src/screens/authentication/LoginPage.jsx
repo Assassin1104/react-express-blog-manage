@@ -34,17 +34,16 @@ export default function LoginPage(props) {
 
         setLoading(true);
         setTimeout(() => {
-            const loginInfo = { username: username, password: password };
+            const loginInfo = { email: username, password: password };
             axios.post('http://localhost:5000/auth/login', loginInfo)
                 .then((response) => {
-                    if (response.data == "Okay") {
-                        alert("You have to logged in.");
-                        setLoading(false);
-                    }
+                    alert(response.data.message);
                 }).catch((ex) => {
-                    console.log(ex);
+                    alert(ex.response.data.message);
+                }).finally(() => {
+                    setLoading(false);
                 });
-        }, 3000);
+        }, 300);
     };
 
     return (

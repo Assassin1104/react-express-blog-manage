@@ -16,9 +16,21 @@ router.post("/login", validate({
         password
     } = req.body;
 
-    res.json({
-        
-    });
+    if(email != "kingdev10260522@gmail.com"){
+        return res
+            .status(401)
+            .json({message: "Email didn't registered."});
+    }
+    
+    if(password != "kingking"){
+        return res
+            .status(401)
+            .json({message: "Incorrect password."});
+    }
+
+    return res
+        .status(200)
+        .json(({message: "successful login"}));
 });
 
 module.exports = router;
