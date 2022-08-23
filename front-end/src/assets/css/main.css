@@ -73,3 +73,43 @@ form .form-group button{
     color: white;
     margin-left: 10px;
   }
+  .logo {
+      width: 176px;
+  }
+  nav .container .navbar-nav {
+      justify-content: end;
+      width: 100%;
+      align-items: center;
+  }
+  .primary-background {
+      background-color: #F05D61 !important;
+  }
+  .primary-color {
+      color: #F05D61 !important;
+  }
+  .header .navbar .navbar-nav .navbar-font {
+    font-size: 17px;
+  }
+  .register {
+    height: 100vh;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  .register .register-form {
+    background-image: url("../../assets/images/group.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 100%;
+  }
+  .register .register-form .form-title {
+    justify-content: center;
+  }
+  .register .register-background {
+    background-image: url("../../assets/images/adil.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 100%;
+  }
+
+  
