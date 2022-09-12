@@ -18,7 +18,7 @@ export default function Header() {
                         <Nav className="me-auto">
                             <img className="cart me-2" src={cart} />
                             <Nav.Link href="#home" className="me-2"><Button variant="danger" className="primary-background navbar-font">Become a Local Expert</Button></Nav.Link>
-                            <Nav.Link href="#features" className="me-2 primary-color">Login</Nav.Link>
+                            <Nav.Link href="/login" className="me-2 primary-color">Login</Nav.Link>
                             <Nav.Link href="#pricing" className="me-2"><Button variant="danger" className="primary-background navbar-font">Sign Up</Button></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

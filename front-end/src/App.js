@@ -4,17 +4,25 @@ import Loading from './components/loading';
 import { useState } from 'react';
 import Header from './screens/authentication/Header';
 import Register from './screens/authentication/Register';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
-function App() {
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
+const RegisterPage = () => {
   return (
     <div>
-        {/* <Loading spinnerShow = {loading} message= {message} /> */}
-        {/* <LoginPage setLoading = {setLoading} setMessage = {setMessage} loading = {loading}/> */}
-        <Header />
-        <Register />
+      <Header title="register"/>
+      <Register />
     </div>
+  )
+}
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route>
+          <Route index element={<RegisterPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.svg";
 import google from "../../assets/images/google.png";
 import facebook from "../../assets/images/facebook.png";
+import axios from "axios";
+
 
 
 export default function Register() {
@@ -12,6 +14,7 @@ export default function Register() {
     const [lastname, setLastname] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
     const handleFirstNameChange = (e) => {
         setFirstname(e.target.value);
     }
@@ -30,7 +33,18 @@ export default function Register() {
         if (form.checkValidity() === false) {  
             return;
         }
-        console.log("Asdfasdfasdf");
+        const registerInfo = { firstName: firstname, lastName: lastname, email: email, password: password };
+        axios.post('http://localhost:5000/auth/register', registerInfo)
+            .then((response) => {
+                if(response.data.status == true){
+                    alert("successful register");
+                    return;
+                }
+            }).catch((ex) => {
+                alert(ex.response.data.message);
+            }).finally(() => {
+                setLoading(false);
+            });
     }
     return (
         <Row className="register">
@@ -41,10 +55,10 @@ export default function Register() {
                             <Row>
                                 <Form.Label className="login-title">Create an account</Form.Label>
                                 <Form.Label>Already an account? Login</Form.Label>
-                                <Col md={6} sm={12} className="pe-1 mt-3">
+                                <Col md={6} sm={12} className=" mt-3">
                                     <Form.Control placeholder="First name" className="py-3" onChange={handleFirstNameChange} required/>
                                 </Col>
-                                <Col md={6} sm={12} className="ps-1 mt-3">
+                                <Col md={6} sm={12} className=" mt-3">
                                     <Form.Control placeholder="Last name" className="py-3" onChange={handleLastNameChange} required/>
                                 </Col>
                                 <Col sm={12} className="mt-3">
@@ -59,7 +73,7 @@ export default function Register() {
                             </Row>
                         </Form>
                     </Col>
-                    <Col sm={12}>
+                    <Col md={12}>
                         <div className="external-title mt-3">or sign up with</div>
                         <div className="button-group d-flex justify-content-center">
                             <Button variant="light" className="me-3"><img src={google}/></Button>

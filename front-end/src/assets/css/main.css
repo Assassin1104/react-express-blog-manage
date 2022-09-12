@@ -143,8 +143,10 @@ form .form-group button{
     justify-content: center;
     align-items: center;
   }
-  @media screen {
-    
+  @media only screen and (max-width: 760px) {
+    .register .register-background {
+      display: none;
+    }
   }
 
   
