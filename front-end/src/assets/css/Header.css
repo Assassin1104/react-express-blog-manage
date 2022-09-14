@@ -1,0 +1,35 @@
+.header {}
+
+.header-logo {
+    width: 176px;
+}
+
+nav .container .navbar-nav {
+    justify-content: end;
+    width: 100%;
+    align-items: center;
+}
+
+.navbar-toggler {
+    color: #F05D61;
+}
+
+.navbar-toggler:hover {
+    color: #F05D61;
+    box-shadow: 0px 5px 15px #F05D61;
+}
+
+.navbar-toggler > span:hover {
+    color: #F05D61;
+    /* box-shadow: 0px 5px 15px #F05D61; */
+}
+
+@media only screen and (max-width: 991px) {
+    nav .container .navbar-nav {
+        flex-direction: column;
+        justify-self: center;
+        align-items: self-end;
+    }
+
+}
+

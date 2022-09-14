@@ -1,0 +1,16 @@
+.primary-background {
+    background-color: #F05D61 !important;
+}
+
+.primary-color {
+    color: #F05D61 !important;
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+  

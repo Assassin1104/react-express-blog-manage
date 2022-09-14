@@ -1,0 +1,32 @@
+.ybutton-fill {
+    background-color: #F05D61 !important;
+    color: white;
+    border: 1px solid #F05D61;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.ybutton-fill:hover {
+    box-shadow: 0px 5px 15px #F05D61;
+    border: 1px solid #F05D61;
+}
+
+.ybutton-text {
+    background-color: white;
+    color: #F05D61;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.ybutton-text:hover {
+    background-color: white;
+    color: #F05D61;
+    font-size: 17px;
+    border: 1px solid #ffc6c6;
+    box-shadow: 0px 5px 15px #F05D61;
+}
+
+.y-form-control{
+    border-radius: 10px;
+    margin-top: 20px;
+}

@@ -1,25 +1,26 @@
-import './assets/css/main.css';
-import LoginPage from './screens/authentication/LoginPage';
-import Loading from './components/loading';
-import { useState } from 'react';
-import Header from './screens/authentication/Header';
-import Register from './screens/authentication/Register';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import React from 'react';
+import "bootstrap/dist/js/bootstrap.min.js";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const RegisterPage = () => {
-  return (
-    <div>
-      <Header title="register"/>
-      <Register />
-    </div>
-  )
-}
+import "./assets/css/Global.css"
+import "./assets/css/Ybalah.css"
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+//Scenes
+import SignUp from './scenes/authentication/SignUp';
+import SignIn from './scenes/authentication/SignIn';
+import Home from './scenes/home/Home';
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route>
-          <Route index element={<RegisterPage />} />
+          <Route index element={<SignUp />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/home" element={<Home />} />
         </Route>
       </Routes>
     </BrowserRouter>

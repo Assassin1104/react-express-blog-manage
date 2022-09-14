@@ -7,6 +7,8 @@ const User = require('../models/user');
 /**
  * API: /auth/login
  */
+
+
 router.post("/login", validate({
     body: Joi.object({
         email: Joi.string().email().required(),
@@ -17,14 +19,15 @@ router.post("/login", validate({
         email, 
         password
     } = req.body;
+    console.log(email);
 
-    if(email != "kingdev10260522@gmail.com"){
+    if(email != "lavrin110413@gmail.com"){
         return res
             .status(401)
             .json({message: "Email didn't registered."});
     }
     
-    if(password != "kingking"){
+    if(password != "immunity"){
         return res
             .status(401)
             .json({message: "Incorrect password."});

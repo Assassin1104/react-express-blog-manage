@@ -1,0 +1,118 @@
+.register {
+    height: calc(100vh - 92px);
+    min-height: 100%;
+}
+
+.register .register-form {
+    background-image: url("../../assets/images/group.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 100%;
+}
+
+.register .register-form .row .col-sm-12>form {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+
+.register-form-login-title {
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin: 0px;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.register-form-login-head {
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin: 0px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.register-form-login-head>p {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.register-form .row .col-sm-12>form button {
+    width: 100%;
+}
+
+.register-form-external-title {
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.register-form-external-end {
+    /* max-width: 353px; */
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.register-form-external-end > p {
+    /* max-width: 353px; */
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 500;
+    width: 353px;
+}
+
+.register-form-gf-group {
+    margin-top: 18px;
+}
+
+.register-form-gf-group-google {
+    width: 118px;
+    height: 84px;
+}
+
+.register-form-gf-group-facebook {
+    width: 118px;
+    height: 84px;
+    margin-left: 39px;
+}
+
+
+.register-background {
+    background-image: url("../../assets/images/adil.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 100%;
+    padding-left: 0;
+}
+
+.register-background .register-opicity {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-form-login-create {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 760px) {
+    .register .register-background {
+        display: none;
+    }
+}
