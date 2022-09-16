@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import { Col, Container, Form, Row, Button } from "react-bootstrap";
 
 import { BiEnvelope } from "react-icons/bi";
@@ -10,7 +12,11 @@ import logo from "../../assets/images/logo.svg"
 
 import LoginGF from "./LoginGF";
 
+// const navigate = useNavigate();
+
 export default function LoginPage(props) {
+
+    const navigate = useNavigate();
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -42,6 +48,10 @@ export default function LoginPage(props) {
             axios.post('http://localhost:5000/auth/login', loginInfo)
                 .then((response) => {
                     alert(response.data.message);
+                    if (response.data.message === "successful login") {
+                        localStorage.setItem("authenticated", true);
+                        navigate("/portal");
+                    }
                 }).catch((ex) => {
                     alert(ex.response.data.message);
                 }).finally(() => {
@@ -71,7 +81,7 @@ export default function LoginPage(props) {
                                         <Form.Control placeholder="Password" className="y-form-control py-3" type="password" onChange={handlePasswordChange} required />
                                     </Col>
                                     <Col sm={12} className="mt-3">
-                                        <Button  variant="light" className="register-form-login-create primary-color py-3" type="submit">
+                                        <Button variant="light" className="register-form-login-create primary-color py-3" type="submit">
                                             Login with Eamil&nbsp;&nbsp;&nbsp;
                                             <BiEnvelope size={19} />
                                         </Button>

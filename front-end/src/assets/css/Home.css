@@ -57,3 +57,9 @@
     font-weight: 700;
     margin-top: 25px;
 }
+
+.home-main1-details > div > p:nth-child(2) {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: -25px;
+}

@@ -5,25 +5,28 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/css/Global.css"
 import "./assets/css/Ybalah.css"
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
+import { ProtectedLayout } from "./components/layout/ProtectedLayout";
+import { HomeLayout } from "./components/layout/HomeLayout";
 //Scenes
 import SignUp from './scenes/authentication/SignUp';
 import SignIn from './scenes/authentication/SignIn';
-import Home from './scenes/home/Home';
+import Home from './scenes/portal/Home';
 
 function App() {
   return (
-    <BrowserRouter>
       <Routes>
-        <Route>
-          <Route index element={<SignUp />} />
+        <Route element={<HomeLayout />}>
+          <Route index element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
-          <Route path="/home" element={<Home />} />
+        </Route>
+
+        <Route element={<ProtectedLayout />}>
+          <Route path="/portal" element={<Home />} />
         </Route>
       </Routes>
-    </BrowserRouter>
   );
 }
 
